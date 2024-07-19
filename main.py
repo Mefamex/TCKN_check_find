@@ -17,11 +17,12 @@ Harici kütüphaneler:
 
 Uyarı:
 - Herhangi bir veri merkezinden kontrol sağlanmamaktadır
-- Kimlik numaralarının varlığını değil kurallara uygunluğunu test etme amaçlıdır\n""",sep="")
+- Kimlik numaralarının varlığını değil kurallara uygunluğunu test etme amaçlıdır\n
+##################################################################################""",sep="")
 
 from time import sleep
 from typing import List, Union
-
+sleep(1)
 class TCKN_class:
     """TC Kimlik No ile ilgili işlemleri yönetir."""
     def tc_check(self, tc: int) -> bool or str:
@@ -86,7 +87,6 @@ class TCKN_class:
             count = 0
             while tc < end:
                 tc = self.tc_next(tc)[0]
-                print("while içinde", tc)
                 count += 1
             return count
 
@@ -101,13 +101,12 @@ if __name__ == "__main__":
         print("1. TC Kontrol")
         print("2. Bir Sonraki Geçerli TC")
         print("3. Belirli Bir Aralıktaki Geçerli TC Sayısı")
-        print("4. Çıkış")
 
-        secim = input("Seçiminizi giriniz (1-4): ")
+        secim = input("Seçiminizi giriniz (1-3): ")
 
         try:
             secim = int(secim)
-            if  not 1 <= secim <= 4:
+            if  not 1 <= secim <= 3:
                 print("Geçersiz seçim. Lütfen 1-4 arasında bir değer giriniz.")
                 continue
         except ValueError: print("Geçersiz giriş. Lütfen bir sayı giriniz.")
@@ -122,7 +121,7 @@ if __name__ == "__main__":
             sonuc = tckn.tc_check(tc_no)
             if isinstance(sonuc, str): 
                 print(sonuc)
-            else: print(f"TC Kimlik No {tc_no} {'geçerli' if sonuc else 'geçersiz'}.")
+            else: print(f"TC Kimlik No {tc_no} {'✓ geçerli ' if sonuc else 'x geçersiz '}")
 
         elif secim == 2:
             while True:
@@ -138,7 +137,7 @@ if __name__ == "__main__":
         elif secim == 3:
             while True:
                 try:
-                    baslangic_tc = int(input("Başlangıç TC Kimlik No giriniz: "))
+                    baslangic_tc = int(input("\nBaşlangıç TC Kimlik No giriniz: "))
                     bitis_tc = int(input("Bitiş TC Kimlik No giriniz: "))
                     if baslangic_tc > bitis_tc:
                         raise ValueError
@@ -146,8 +145,8 @@ if __name__ == "__main__":
                 except ValueError:
                     print("Geçersiz giriş. Lütfen başlangıç TC'nin bitiş TC'den küçük olduğundan emin olun.")
 
-            sayisi = tckn.which_Tc_between(baslangic_tc, bitis_tc)
-            print(f"Belirtilen aralıktaki ({baslangic_tc}-{bitis_tc}) geçerli TC Kimlik Numarası sayısı: {sayisi}")
+            sayisi = tckn.which_tc_between(baslangic_tc, bitis_tc)
+            print(f"Belirtilen aralıktaki ({baslangic_tc}-{bitis_tc}), {bitis_tc-baslangic_tc} adet numara kontrol edildi.\n\t\t\tgeçerli TC Kimlik Numarası sayısı: {sayisi}")
 
         else:
             print("Çıkış yapılıyor...")
