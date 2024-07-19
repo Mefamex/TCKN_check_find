@@ -2,9 +2,9 @@
 
 Bu modül, TC Kimlik Numarası (TCKN) ile ilgili işlemleri gerçekleştirmek için tasarlanmıştır. Aşağıdakileri sağlar:
 
-* **TCKN Doğrulama:** Luhn algoritması kullanarak bir TCKN'nin formatını ve kontrol rakamını doğrular.
-* **Bir Sonraki Geçerli TCKN:** Verilen bir TCKN'den sonraki ilk geçerli TCKN'yi bulur.
-* **Belirli Bir Aralıktaki Geçerli TCKN Sayısı:** Belirli bir aralıktaki geçerli TCKN'lerin sayısını hesaplar veya listesini verir.
+* **TCKN Doğrulama:** Luhn algoritması kullanarak bir TCKN'nin formatını ve kontrol rakamını doğrular
+* **Bir Sonraki Geçerli TCKN:** Verilen bir TCKN'den sonraki ilk geçerli TCKN'yi bulur
+* **Belirli Bir Aralıktaki Geçerli TCKN Sayısı:** Belirli bir aralıktaki geçerli TCKN'lerin sayısını hesaplar veya listesini verir
 
 ## Kullanım
 
