@@ -20,6 +20,7 @@ Uyarı:
 - Kimlik numaralarının varlığını değil kurallara uygunluğunu test etme amaçlıdır\n""",sep="")
 
 from time import sleep
+from typing import List, Union
 
 class TCKN_class:
     """TC Kimlik No ile ilgili işlemleri yönetir."""
@@ -34,23 +35,22 @@ class TCKN_class:
         if not isinstance(tc, int) or len(str(tc)) != 11: return "TC, int türünde 11 haneli olmalıdır"
         tc=list(map(int, str(tc)))
         A, B = tc[0] + tc[2] + tc[4] + tc[6] + tc[8], tc[1] + tc[3] + tc[5] + tc[7]
-        if (A * 7 - B) % 10 != tc[9] or (A + B + tc[9]) % 10 != tc[10]: return False,"kontrol grubu"
+        if (A * 7 - B) % 10 != tc[9] or (A + B + tc[9]) % 10 != tc[10]: return False
         return True
 
 
-    def tc_next(self, tc: int, kontrol_sayisi: bool = False):
+    def tc_next(self, tc: int, kontrol_sayisi: bool = False) -> List[int] or List[int, int] or None:
         """Verilen numaradan sonraki ilk geçerli TC Kimlik No'yu bulur.
         Args:
             tc (int): Başlangıç TC Kimlik No.
             kontrol_sayisi (bool, optional): Kontrol edilen TC Kimlik Nolarının sayısını
-                döndürür (varsayılan: False).
+                                            döndürür (varsayılan: False).
         Returns:
-            Union[int, Tuple[int, int]]:
-                - int:             ('kontrol_sayisi'='False') Bir sonraki geçerli TC Kimlik No .
-                - Tuple[int, int]: ('kontrol_sayisi'='True') (Bir sonraki geçerli TC Kimlik No, kontrol
-                                    edilen TC Kimlik Nolarının sayısı) .
-                - None: Bir sonraki geçerli TC Kimlik No bulunmazsa.
-                - TypeError: 'tc' parametresi 'int' türünde değilse veya 'tc' parametresinin uzunluğu 11 değilse."""
+            - list[int]:      ('kontrol_sayisi'='False') Bir sonraki geçerli TC Kimlik No .
+            - list[int, int]: ('kontrol_sayisi'='True') (Bir sonraki geçerli TC Kimlik No, kontrol
+                                edilen TC Kimlik Nolarının sayısı) .
+            - None:           Bir sonraki geçerli TC Kimlik No bulunmazsa.
+            - TypeError: 'tc' parametresi 'int' türünde değilse veya 'tc' parametresinin uzunluğu 11 değilse."""
 
         if not isinstance(tc, int) or len(str(tc)) != 11: raise TypeError("TC, int türünde 11 haneli olmalıdır")
         old = tc + 0
@@ -79,14 +79,16 @@ class TCKN_class:
         if get_list is True:
             tc_list=[]
             while tc < end:
-                tc = self.tc_next(tc)
-                tc_list.append(self.tc_next(tc)[0])
+                tc = self.tc_next(tc)[0]
+                tc_list.append(tc)
             return [len(tc_list),tc_list]
         else:
             count = 0
             while tc < end:
-                tc = self.tc_next(tc)
+                tc = self.tc_next(tc)[0]
+                print("while içinde", tc)
                 count += 1
+            return count
 
 
 
