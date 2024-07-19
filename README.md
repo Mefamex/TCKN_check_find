@@ -35,6 +35,7 @@ baslangic_tc = 10000000000
 bitis_tc = 10000001000
 sonuc = tckn.which_tc_between(baslangic_tc, bitis_tc, get_list=True)
 print(f"Belirtilen aralıktaki ({baslangic_tc}-{bitis_tc}) geçerli TC Kimlik Numarası sayısı: {sonuc[0]}\nNumaralar: {sonuc[1]}")
+```
 
 # Kurulum
 Modülü kullanmak için aşağıdaki adımları izleyin:
