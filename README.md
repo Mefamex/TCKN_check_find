@@ -1,8 +1,6 @@
 ## TC Kimlik No Doğrulama ve Tekrarlama Modülü - Readme.md
 
-**Başlık:** TC Kimlik No Doğrulama ve Tekrarlama Modülü
-
-**Açıklama:**
+**TC Kimlik No Doğrulama ve Tekrarlama Modülü**
 
 Bu modül, TC Kimlik Numarası (TCKN) ile ilgili işlemleri gerçekleştirmek için tasarlanmıştır. Aşağıdakileri sağlar:
 
