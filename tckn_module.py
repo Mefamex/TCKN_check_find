@@ -2,7 +2,7 @@
 # Created on Friday, July 19 15:30:00 2024
 # @author: mefamex
 print("\n","#" * 30 ,"""  Module loading...
-          TC Kimlik No Doğrulama ve Tekrarlama
+          TC Kimlik No Doğrulama ve Tekrarlama 
 
 Bu modül, bir TC Kimlik Numarası'nın formatını doğrular ve bir sonraki geçerli
 numarayı bulur. Ayrıca bir aralıktaki geçerli numaraları arama işlevi de sağlar.
