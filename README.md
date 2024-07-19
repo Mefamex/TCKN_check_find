@@ -43,6 +43,9 @@ Modülü kullanmak için aşağıdaki adımları izleyin:
 1. tckn_module.py dosyasını indirin ve projenize ekleyin.
 2. Kodunuzda from tckn_module import TCKN_class satırını ekleyin.
 3. Yukarıdaki örneklerde gösterildiği gibi işlevleri kullanın.
+### Python Version:
+
+This module requires **Python 3.9** or above to run properly.
 
 ## Uyarılar
 
