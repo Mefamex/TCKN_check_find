@@ -23,15 +23,22 @@ tckn = TCKN_class()
 # TCKN doğrulaması
 tc_no = 12345678901
 sonuc = tckn.tc_check(tc_no)
-print(f"TC Kimlik No {tc_no} {sonuc}.")
+print(f"TC Kimlik No kontrolu: {tc_no} {sonuc}.")
 
 # Bir sonraki geçerli TCKN
 baslangic_tc = 12345678900
 sonuc = tckn.tc_next(baslangic_tc)
-print(f"Bir sonraki geçerli TC Kimlik No: {sonuc[0]}")
+print(f"{baslangic_tc}'den bir sonraki geçerli TC Kimlik No: {sonuc[0]}")
 
 # Belirli bir aralıktaki geçerli TCKN sayısı
 baslangic_tc = 10000000000
-bitis_tc = 20000000000
-sayisi = tckn.which_tc_between(baslangic_tc, bitis_tc)
-print(f"Belirtilen aralıktaki ({baslangic_tc}-{bitis_tc}) geçerli TC Kimlik Numarası sayısı: {sayisi}")
+bitis_tc = 10000001000
+sonuc = tckn.which_tc_between(baslangic_tc, bitis_tc, get_list=True)
+print(f"Belirtilen aralıktaki ({baslangic_tc}-{bitis_tc}) geçerli TC Kimlik Numarası sayısı: {sonuc[0]}\nNumaralar: {sonuc[1]}")
+
+# Kurulum
+Modülü kullanmak için aşağıdaki adımları izleyin:
+
+1. tckn_module.py dosyasını indirin ve projenize ekleyin.
+2. Kodunuzda from tckn_module import TCKN_class satırını ekleyin.
+3. Yukarıdaki örneklerde gösterildiği gibi işlevleri kullanın.
