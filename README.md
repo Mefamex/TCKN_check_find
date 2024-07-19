@@ -1,4 +1,4 @@
-# TC Kimlik No Doğrulama ve Tekrarlama Modülü
+# TC Kimlik No Doğrulama ve Bulma Modülü
 
 Bu modül, TC Kimlik Numarası (TCKN) ile ilgili işlemleri gerçekleştirmek için tasarlanmıştır. Aşağıdakileri sağlar:
 
