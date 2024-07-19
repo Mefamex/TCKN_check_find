@@ -20,14 +20,14 @@ Modülü kullanmak için:
 **Örnek Kullanım:**
 
 ```python
-from TCKN_class import TCKN_class
+from TCKN_check_find import TCKN_class
 
 tckn = TCKN_class()
 
 # TCKN doğrulaması
 tc_no = 12345678901
 sonuc = tckn.tc_check(tc_no)
-print(f"TC Kimlik No {tc_no} {'geçerli' if sonuc else 'geçersiz'}.")
+print(f"TC Kimlik No {tc_no} {sonuc}.")
 
 # Bir sonraki geçerli TCKN
 baslangic_tc = 12345678900
