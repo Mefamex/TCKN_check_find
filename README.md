@@ -6,7 +6,7 @@ Bu modül, TC Kimlik Numarası (TCKN) ile ilgili işlemleri gerçekleştirmek i�
 * **Bir Sonraki Geçerli TCKN:** Verilen bir TCKN'den sonraki ilk geçerli TCKN'yi bulur.
 * **Belirli Bir Aralıktaki Geçerli TCKN Sayısı:** Belirli bir aralıktaki geçerli TCKN'lerin sayısını hesaplar veya listesini verir.
 
-# Kullanım
+## Kullanım
 
 Modülü kullanmak için:
 
@@ -37,9 +37,14 @@ sonuc = tckn.which_tc_between(baslangic_tc, bitis_tc, get_list=True)
 print(f"Belirtilen aralıktaki ({baslangic_tc}-{bitis_tc}) geçerli TC Kimlik Numarası sayısı: {sonuc[0]}\nNumaralar: {sonuc[1]}")
 ```
 
-# Kurulum
+## Kurulum
 Modülü kullanmak için aşağıdaki adımları izleyin:
 
 1. tckn_module.py dosyasını indirin ve projenize ekleyin.
 2. Kodunuzda from tckn_module import TCKN_class satırını ekleyin.
 3. Yukarıdaki örneklerde gösterildiği gibi işlevleri kullanın.
+
+## Uyarılar
+
+* Herhangi bir veri merkezinden kontrol sağlanmamaktadır.
+* Kimlik numaralarının varlığını değil kurallara uygunluğunu test etme amaçlıdır.
