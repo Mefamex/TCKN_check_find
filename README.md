@@ -16,7 +16,7 @@ Modülü kullanmak için:
 **Örnek Kullanım:**
 
 ```python
-from TCKN_check_find import TCKN_class
+from tckn_module import TCKN_class
 
 tckn = TCKN_class()
 
